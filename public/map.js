@@ -26,7 +26,7 @@ var data = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?
     tileSize: 512,
     zoomOffset: -1,
 //#######please fill in your accessToken########################################
-    accessToken: 'pk.eyJ1IjoibWE5ZGFsZW44IiwiYSI6ImNrYTZ4ZGdqNDBibWUyeHBuN3JmN2lrdDcifQ.SgZHAThfZLyx2Avk3th2Lg'
+    accessToken: ''
 }).addTo(basemap);
 
 /**
