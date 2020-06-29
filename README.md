@@ -1,5 +1,5 @@
-<h1><strong>Geosoftware 1 - Exercise 5</strong></h1>
-<h4><strong> by Magdalena Fischer</strong></h4>
+<h1><strong>Geosoftware 1 - Exercise 7</strong></h1>
+<h4><strong> by Cornelius Zerwas, Ole Heiland, Magdalena Fischer</strong></h4>
 <p> This Repository contains all the scripts for the exercise 5 for the Geosoftware 1 course.<br/>
     The project has two HTML pages. On the first page all the busstops from Münster are displayed in a map.
     If they are clicked, the next busconnections will be shown in the table below. 
@@ -24,5 +24,11 @@ npm install --global mocha <br/>
 npm install @turf/bearing <br/>
 npm install @turf/distance <br/>
 npm test
-<h2></h2>
+<h2>For Dockerization</h2>
+install docker  <br/>
+use Dockerfile and docker-compose.yml from this repository<br/>
+or<br/>
+pull from dockerHub: https://hub.docker.com/repository/docker/ma9dalen8/node-web-app<br/>
+check if all images and containers are deleted <br/>
+then docker-compose up
 <p></p>
