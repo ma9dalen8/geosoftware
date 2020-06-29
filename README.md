@@ -1,6 +1,6 @@
 <h1><strong>Geosoftware 1 - Exercise 7</strong></h1>
 <h4><strong> by Cornelius Zerwas, Ole Heiland, Magdalena Fischer</strong></h4>
-<p> This Repository contains all the scripts for the exercise 5 for the Geosoftware 1 course.<br/>
+<p> This Repository contains all the scripts for the exercise 7 for the Geosoftware 1 course.<br/>
     The project has two HTML pages. On the first page all the busstops from Münster are displayed in a map.
     If they are clicked, the next busconnections will be shown in the table below. 
     Also all the Objects can be loaded from the Mongodb database. If there are already some entries, the distance to the next Busstop can be calculated.
