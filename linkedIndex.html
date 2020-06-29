@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Geosoft1 </title>
+        <header> <br/><br/><br/>
+
+          </h2>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin="anonymous"/>
+          <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+          integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+          crossorigin="anonymous"></script>
+          <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+          <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+          <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+
+          <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Geosoftware 1</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Main Page
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="linkedIndex.html">choose your Location</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/item">database</a>
+        </li>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center">
+        <h1 class="font-weight-light">Location Input</h1>
+        <p class="lead">create Locations, edite and delete location</p>
+      <br/></div>
+    </div>
+  </div>
+
+        </header>
+        </header>
+    </head>
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+    <div class="container">
+
+      <label for='street'><strong>Street</strong> </label>
+      <input type='text' id='street' >
+
+      <br/><label for='nr'><strong>House number</strong></label>
+      <input type='number' id='nr' min='0' max='000'>
+
+      <br/><label for='city'><strong>City</strong> </label>
+      <input type='text' id='city' > <button type='button' onclick="geocoding()">Submit</button></br></br>
+
+      <br/><br/><div class="container" id="test">
+        <button type="button" onclick="showingDatabaseContent()">Database Content</button>
+        <br/><br/><strong> Please select objects (multiple choice for deletion possible, only single choice for update) </strong>
+        <ul id='ul'><br/></ul>
+
+
+      <div class="container">
+
+      <button type="button" onclick="deleteItem()" >Delete <br/>one or multiple </button>
+      <button type="button" onclick="updateItem()">Update one set of <br/> coordinates</button>
+      <div  class= "container" id="updateTextarea"> </div>
+      <button id='updateButton' type="button" onclick="serverCall()">Submit</button>
+
+    <div class="container">
+
+      <button type='button' onclick="getLocation()">Browser Location</button> </br>
+    </div>
+  </div>
+    </div>
+  </div>
+  </div>
+
+    <div class="col-lg-6">
+
+      <br/><br/>
+      <div class= "container" id="result"> </div>
+      <div class="container" id="userMap" style= 'height: 400px'></div>
+      </div>
+    </div>
+<!--
+    <div class="col-lg-4">
+      <br/><br/><div class="container" id="test">
+        <button type="button" onclick="showingDatabaseContent()">Database Content</button>
+        <br/><br/><strong> Please select objects (multiple choice for deletion possible, only single choice for update) </strong>
+        <ul id='ul'><br/></ul>
+
+
+      <div class="container">
+
+      <button type="button" onclick="deleteItem()" >Delete <br/>one or multiple </button>
+      <button type="button" onclick="updateItem()">Update one set of <br/> coordinates</button>
+      <div  class= "container" id="updateTextarea"> </div>
+      <button id='updateButton' type="button" onclick="serverCall()">Submit</button>
+    </div>
+  </div> -->
+
+      <div id= 'scripte'>
+        <script src="public/GeoJSON.js"></script>
+        <script src="public/userMap.js"></script>
+
+        <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+      </div>
+      <!-- Footer vgl: https://mdbootstrap.com/docs/jquery/navigation/footer/-->
+      <footer class="page-footer font-small blue pt-4">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright: Magdalena Fischer, m_fisc39@wwu.de,
+          <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+
+      </footer>
+
+    </body>
+</html>
