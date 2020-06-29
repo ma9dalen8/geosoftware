@@ -30,5 +30,5 @@ use Dockerfile and docker-compose.yml from this repository<br/>
 or<br/>
 pull from dockerHub: https://hub.docker.com/repository/docker/ma9dalen8/node-web-app<br/>
 check if all images and containers are deleted <br/>
-then docker-compose up
+afterwards<br/> docker-compose up
 <p></p>
