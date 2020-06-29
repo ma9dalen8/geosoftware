@@ -19,5 +19,10 @@
     For the mapping and the geocoding I used Mapbox.<br/>
     --> Please fill your accessTokens into the scripts. Twice in "usermap.js", once in "map.js"
     </p>
+<h2>For Testing</h2>
+npm install --global mocha
+npm install @turf/bearing
+npm install @turf/distance <br/>
+npm test
 <h2></h2>
 <p></p>
