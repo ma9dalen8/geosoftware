@@ -20,8 +20,8 @@
     --> Please fill your accessTokens into the scripts. Twice in "usermap.js", once in "map.js"
     </p>
 <h2>For Testing</h2>
-npm install --global mocha
-npm install @turf/bearing
+npm install --global mocha <br/>
+npm install @turf/bearing <br/>
 npm install @turf/distance <br/>
 npm test
 <h2></h2>
